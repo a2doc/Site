@@ -21,7 +21,6 @@ body{
 
 section#main{
 	position : absolute;
-	top : 100px;
 	width: 900px ;	
 	height : 1000px;
 }
@@ -50,7 +49,7 @@ section#Forums_track{
 	background-color:#FFFFFF;
 	padding : 25px;
 	position : absolute;
-	top :420px ;
+	top :520px ;
 	width: auto ;
 	margin : 20px ;
 	border-radius: 1em;
@@ -62,7 +61,7 @@ section#Forums_track{
 section#agenda{
 	background-color:#FFFFFF;
 	position : absolute;
-	top : 0px;
+	top : 100px;
 	right : 0px ;
 	margin :20px;
 	padding : 20px;
@@ -165,7 +164,7 @@ nav ul{
 	   position : relative;
 	   margin-left: auto;	
 	   margin-right:auto;
-	   width: 380px
+	   width: 450px
 }
 
 nav a{

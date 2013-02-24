@@ -82,7 +82,7 @@
  <!--	<div id="wrapper">	-->
 			
 			<?php 
-			include("php/includes/header.php");
+			//include("php/includes/header.php");
 			include("php/public/main.php");
 			//include("php/public/footer.php");
 			?>

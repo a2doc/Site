@@ -1,3 +1,7 @@
+	<?php
+     include("php/includes/header.php");
+     ?>
+     
 <section id="containNews">
 
 	<section  id="News">
@@ -11,7 +15,7 @@
 
 	$q = $bdd->query("SELECT * FROM News ORDER BY date DESC");	
 	$i=0;
-          while (($champ_result = $q->fetch()) && ($i<1)) 
+          while (($champ_result = $q->fetch()) && ($i<3)) 
           {
           	$i=$i+1;
 			if ($i==1)
