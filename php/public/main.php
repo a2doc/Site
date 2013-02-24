@@ -17,7 +17,7 @@
 	}
 
 		else {
-		$inclusion = REP . "accueil.inc.php";
+		$inclusion = REP . "communaute.inc.php";
 		}
 
 	include "$inclusion"; 

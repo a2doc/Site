@@ -31,7 +31,7 @@ echo '<input type="submit" value="Connexion">';
 echo '</form>';
 
 echo '<a href="inscriptionTobase.php"> Devenir Membres </a></p>';
-echo '<a href="accueil.php"> Visiteur </a></p>';
+echo '<a href="../../index2.php?page=presentation"> Visiteur </a></p>';
 
 
 		 
@@ -56,7 +56,7 @@ $n=$q->fetch();
        // redirection
         // ATTENTION A BIEN METTRE LA PAGE DE REDIRECTION ICI
 
-       header("location: membres.php");
+       header("location: index2.php?page=communaute.php");
        }
 
 // Si le login ou le mot de passe sont incorrect
