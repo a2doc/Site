@@ -8,7 +8,7 @@ body{
 	font-family:arial;
 	margin:0;
 	padding:0;
-	background: url(../img/background/1.jpg) no-repeat center fixed; 
+	background: url(../img/background/spray2.jpg) no-repeat center fixed; 
 	-webkit-background-size: cover; /* pour Chrome et Safari */
 	-moz-background-size: cover; /* pour Firefox */
 	-o-background-size: cover; /* pour Opera */
@@ -19,29 +19,37 @@ body{
 /************************************************/
 /*					le menu						*/
 /************************************************/
+nav ul{
 
+
+
+}
 
 nav li{
 	display: inline;
-	margin-top: 1em;
-	opacity: 0.8;
-	-webkit-box-shadow: 1px 1px 2px 2px #aaa;
-box-shadow: 1px 1px 2px 2px #aaa;
+	margin-top: 1.2em;
+	opacity: 1;
+	-webkit-box-shadow: 1px 1px 2px 2px #7f7f7f;
+box-shadow: 1px 1px 2px 2px #7f7f7f;
 /*	-webkit-border-radius: 20px;
 	border-radius: 20px;	*/
+	position: relative;
+	top: 13em;	/* position du bloc des quatre dalles */
+	
+	
 }
 
 nav li#presentation{
-	background-color:red;
+	background-color:#CC0033;	/* rouge	*/
 }
 nav li#communaute{
-	background-color:green;
+	background-color:#009933;	/* vert	*/
 }
 nav li#contact{
-	background-color:blue;
+	background-color:#0033CC;	/* bleu	*/
 }
 nav li#cvtheque{
-	background-color:yellow;
+	background-color:#CCCC00;	/* jaune	*/
 }
 
 
@@ -56,15 +64,15 @@ nav li a{
 	
 	display: block;
 	font-family: arial, sans-serif;
-	font-size: 2em;/*1.6em*/
+	font-size: 1.5em;/*1.6em*/
 /*	padding-top: 70%;/*4em*/
 /*	padding-top: 40%;
 	padding-bottom: 40%;	*/
-	padding: 30% 0 30%;
+	padding: 40% 0 40%;
 /*	height: 5em;/*5em*/	/*hauteur du carré*/
 	text-align: center;	
 	color: #000;
-	text-shadow: 1px 1px 5px #fff;
+	text-shadow: 1px 1px 5px #cecece;
 
 	
 	
