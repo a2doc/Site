@@ -1,32 +1,28 @@
-<!DOCTYPE html>
-<html>
-    <head>
-       <meta charset="utf-8" />
-        <title>Inscription </title>
-    </head>
- 
-    <body>
-     
-     
-     <?php
-     include 'connectTobase.php'; 	
+﻿
+
+
+
+    <?php
+     include '../../php/public/connectTobase.php'; 	
      ?>
 
-<form action="inscriptionTobase.php" method="post"  >
-	<p>	
-		Votre nom : <input type="text" name="nom"  />	<BR>
-		Votre Pr�nom : <input type="text" name="prenom"  />	<BR>
-		Votre email : <input type="text" name="email"  />	<BR>
-		Votre Mot de passe : <input type="Password" name="pass"  />	<BR>
-	    Code adh�sion :  <input type="Password" name="code_ad"  />	<BR>			 
-          <input type="Submit" value="Inscription">
-        <input type="reset" >        
-	</p>
-</form>
+	 
+<!--	le formulaire	-->
+	 <h1>Inscription</h1>
+
+		<form action="inscriptionTobase.php" method="post">
+			<p>	
+				Votre nom : <input type="text" name="nom"  />	<BR>
+				Votre prénom : <input type="text" name="prénom"  />	<BR>
+				Votre email : <input type="text" name="email"  />	<BR>
+				Votre mot de passe : <input type="Password" name="pass"  />	<BR>
+				Code adhésion :  <input type="Password" name="code_ad"  />	<BR>			 
+				<input type="Submit" value="Inscription">
+				<input type="reset" >        
+			</p>
+		</form>
 
 
-    </body>
-</html>
 
 <?php
 
@@ -49,15 +45,15 @@ else
 
 $insert=1;
 $num=0 ;
-check_post(nom,$num);
+check_post("nom",$num);
 $insert=$insert_true*$insert;
 $nom=$output[$num];
 $num+=1 ;
-check_post(prenom,$num);
+check_post("prénom",$num);
 $insert=$insert_true*$insert;
 $prenom=$output[$num];
 $num+=1 ;
-check_post(email,$num);
+check_post("email",$num);
 $email=$output[$num];
 
 
@@ -83,11 +79,11 @@ if (preg_match($regex, $email)) {
 $insert=$insert_true*$insert;
 
 $num+=1 ;
-check_post(pass,$num);
+check_post("pass",$num);
 $pass=$output[$num];
 $insert=$insert_true*$insert;
 $num+=1 ;
-check_post(code_ad,$num);
+check_post("code_ad",$num);
 $code_ad=$output[$num];
 $insert=$insert_true*$insert;
 
@@ -107,7 +103,7 @@ $insert_true=0;
  {
    try
      {    
-$sql =  "INSERT INTO a2doc.adherents (idadherents, nom, prenom, mail,pass) VALUES (NULL, '$nom', '$prenom', '$email','$pass')";
+$sql =  "INSERT INTO a2doc.adherents (idadherents, nom, prenom, mail,pass) VALUES (NULL, '$nom', '$prenom', '$email',sha1('$pass'))";
 $req = $bdd->prepare($sql); 
 $req->execute();
      }

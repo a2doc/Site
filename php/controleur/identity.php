@@ -2,15 +2,13 @@
 // demarre une session
 session_start();
 	 $_SESSION['Acces_ad'] = 0;
-	 include 'connectTobase.php';
+	 include '../../php/public/connectTobase.php';
 
 ?>
 
-<html>
-<head>
-<title>Connexion</title>
-</head>
-<body>
+
+<h1>Connexion</h1>
+
 <?php
 
 // variables du formulaire
@@ -19,7 +17,7 @@ $email = isset($_POST['email']) ? $_POST['email'] : '';
 $pass = isset($_POST['pass']) ? $_POST['pass'] : '';
 
 
-// Si aucune action, le formulaire est afficher
+// Si aucune action, le formulaire est affiché
 if ($action !=1 ) {
 
 echo 'Veuillez vous identifier:<br />';
@@ -41,6 +39,12 @@ echo '<a href="../../index2.php?page=presentation"> Visiteur </a></p>';
 // Sinon
 if ($action == 1) {
 
+echo $pass;
+
+$pass=sha1($pass);
+
+echo $pass;
+
 $q = $bdd->query("SELECT COUNT(*) 
                   FROM adherents 
                   WHERE mail='$email' 
@@ -50,13 +54,13 @@ $n=$q->fetch();
 
     if ($n[0] == 1 AND $email != "" AND $pass != "")
        {
-       // Le login est placŽ dans la session
+       // Le login est placé dans la session
        $_SESSION['login_session'] = $email;
 	   $_SESSION['Acces_ad'] = 1;
        // redirection
         // ATTENTION A BIEN METTRE LA PAGE DE REDIRECTION ICI
 
-       header("location: index2.php?page=communaute.php");
+       header("location: ../../index2.php?page=communaute");
        }
 
 // Si le login ou le mot de passe sont incorrect
@@ -76,8 +80,7 @@ die('<font color="red">Informations incorrectes!');
            }
          }
 ?>
-</body>
-</html>
+
 
 
 
