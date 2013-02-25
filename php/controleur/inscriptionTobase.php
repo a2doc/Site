@@ -1,13 +1,12 @@
-﻿
-
-
-
+﻿<!---------------------------------------------------------->
+<!-------------- CONNEXION A LA BASE ----------------------->
+<!---------------------------------------------------------->
     <?php
      include '../../php/public/connectTobase.php'; 	
      ?>
-
-	 
-<!--	le formulaire	-->
+<!---------------------------------------------------------->	 
+<!---------------	FORMULAIRE D'INSCRIPTION	------------>
+<!---------------------------------------------------------->
 	 <h1>Inscription</h1>
 
 		<form action="inscriptionTobase.php" method="post">
@@ -23,7 +22,9 @@
 		</form>
 
 
-
+<!---------------------------------------------------------->	 
+<!--VERIFICATION REMPLISSAGE DES CHAMPS	DU FORMULAIRE------->
+<!---------------------------------------------------------->
 <?php
 
  function check_post($input,$num)
@@ -42,7 +43,11 @@ else
 	$insert_true = 0 ;
  }
 }
+?>
 
+
+
+<?php
 $insert=1;
 $num=0 ;
 check_post("nom",$num);
@@ -56,6 +61,9 @@ $num+=1 ;
 check_post("email",$num);
 $email=$output[$num];
 
+//------------------------------------------------------------//
+//              VERIFICATION SYNTAXE E-MAIL
+//------------------------------------------------------------//
 
 $atom   = '[-a-z0-9!#$%&\'*+\\/=?^_`{|}~]';   // caractres autoriss avant l'arobase
 $domain = '([a-z0-9]([-a-z0-9]*[a-z0-9]+)?)'; // caractres autoriss aprs l'arobase (nom de domaine)
@@ -78,6 +86,10 @@ if (preg_match($regex, $email)) {
 
 $insert=$insert_true*$insert;
 
+//------------------------------------------------------------//
+//         UTILISATION FONCTION CHECK NO EMPTY
+//------------------------------------------------------------//
+
 $num+=1 ;
 check_post("pass",$num);
 $pass=$output[$num];
@@ -98,6 +110,10 @@ $insert_true=0;
  
  $insert=$insert_true*$insert;
  
+//------------------------------------------------------------//
+//         INSERT IN BASE IF NO EMPTY AND SYNTAXE MAIL OK
+//					GOT TO COMMUNAUTE PAGE
+//------------------------------------------------------------//
  
  if ($insert==1)
  {

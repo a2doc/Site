@@ -1,9 +1,7 @@
 <?php
-// demarre une session
 session_start();
 	 $_SESSION['Acces_ad'] = 0;
 	 include '../../php/public/connectTobase.php';
-
 ?>
 
 
