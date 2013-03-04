@@ -32,7 +32,7 @@
   		<!--[if lt IE 9]>
 			<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 		<![endif]-->
-  		<script type="text/javascript" src="votre-script.js"></script>
+ <!-- 		<script type="text/javascript" src="votre-script.js"></script>
  
   		<!-- Incoporez du JavaScript dans la page  -->
   		<script type="text/javascript">
@@ -63,33 +63,39 @@
 			<div class="" id="accueil">		
 				<nav>
 					<ul class="container_12">
-						<li class="grid_3 push_8" id="presentation"><a href="index2.php?page=presentation" title="presentation">Présentation</a></li>
+						<li class="grid_3 push_8" id="presentation"><a href="index2.php?page=presentation" title="presentation">Pr√©sentation</a></li>
 
-	         			 <div id="contain_communaute">
+					<li id="contain" class="grid_3 push_8" style="height:200px">
+                       <div id="contenu_1"   style="position:absolute;height:200px;width:220px;background-color:#009933;visibility:<?php echo $_GET['view1'] ?>">
+                       	<p id="communaute"> Communaut√©</p>
+                       	
+                       </div>
+                        
+                       <div id="contenu_2" style="position:absolute;height:200px;background-color:#555:visibility:<?php echo $_GET['view2'] ?>">
+                       
+                       <?php
+                     include('php/includes/identity.php');   
+                       ?>
+                       
+                       </div> 
+					</li>
+					
+					</ul>
 
-                              <div id="contenu_1" style="visibility:<?php echo $_GET['cache'] ?>"> </div>
-      
-                              <div id="contenu_2" style="visibility:<?php echo $_GET['view'] ?>">
-                              <?php
-	                          include ('identity.php');
-                              ?>	
-                              </div>           
-                         </div>
-
-     				</ul>
 					<ul class="container_12">
-						<li class="grid_3 push_8" id="contact"><a href="index2.php?page=contact" title="contact">Adhésion / Contact</a></li>
-						<li class="grid_3 push_8" id="cvtheque"><a href="index2.php?page=cvtheque" title="cvtheque">CVthèque</a></li>
+						<li class="grid_3 push_8" id="contact"><a href="index2.php?page=contact" title="contact">Adh√©sion / Contact</a></li>
+						<li class="grid_3 push_8" id="cvtheque"><a href="index2.php?page=cvtheque" title="cvtheque">CVth√®que</a></li>
 					</ul>
 				</nav>
 			</div>
 		</section>
-	
-	
-	 	    <script>
+
+
+          <script>
  	    
-      var contain = document.getElementById('contain_communaute'),
+      var contain = document.getElementById('contain'),
           contenu_1 = document.getElementById('contenu_1'),
+          login = document.getElementById('login-form'),          
           contenu_2 = document.getElementById('contenu_2');
           
 
@@ -97,6 +103,7 @@
         
               contenu_1.style.visibility = 'hidden';
               contenu_2.style.visibility = 'visible';
+              login.style.visibility = 'visible';
 
       };
 
@@ -104,13 +111,12 @@
 
               contenu_1.style.visibility = 'visible';
               contenu_2.style.visibility = 'hidden';
+              login.style.visibility = 'hidden';
 
       };
 
     </script>
-
-	
-	
+    	
  	</body>
 </html>
 
