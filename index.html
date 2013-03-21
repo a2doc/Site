@@ -63,7 +63,7 @@
 			<div class="" id="accueil">		
 				<nav>
 					<ul class="container_12">
-						<li class="grid_3 push_8" id="presentation"><a href="index2.php?page=presentation" title="presentation">Présentation</a></li>
+						<li class="grid_3 push_8" id="presentation"><a href="index2.php?page=presentationtoto" title="presentation">Pr√©sentation</a></li>
 
 	         			 <div id="contain_communaute">
 
@@ -78,8 +78,8 @@
 
      				</ul>
 					<ul class="container_12">
-						<li class="grid_3 push_8" id="contact"><a href="index2.php?page=contact" title="contact">Adhésion / Contact</a></li>
-						<li class="grid_3 push_8" id="cvtheque"><a href="index2.php?page=cvtheque" title="cvtheque">CVthèque</a></li>
+						<li class="grid_3 push_8" id="contact"><a href="index2.php?page=contact" title="contact">Adh√©sion / Contact</a></li>
+						<li class="grid_3 push_8" id="cvtheque"><a href="index2.php?page=cvtheque" title="cvtheque">CVth√®que</a></li>
 					</ul>
 				</nav>
 			</div>
@@ -88,26 +88,23 @@
 	
 	 	    <script>
  	    
-      var contain = document.getElementById('contain_communaute'),
-          contenu_1 = document.getElementById('contenu_1'),
-          contenu_2 = document.getElementById('contenu_2');
-          
+				var contain = document.getElementById('contain_communaute'),
+					contenu_1 = document.getElementById('contenu_1'),
+					contenu_2 = document.getElementById('contenu_2');
+				  
 
-     contain.onmouseover = function(e) {
-        
-              contenu_1.style.visibility = 'hidden';
-              contenu_2.style.visibility = 'visible';
+				contain.onmouseover = function(e) {
+					  contenu_1.style.visibility = 'hidden';
+					  contenu_2.style.visibility = 'visible';
+				};
 
-      };
+				contain.onmouseout = function(e) {
 
-      contain.onmouseout = function(e) {
+					  contenu_1.style.visibility = 'visible';
+					  contenu_2.style.visibility = 'hidden';
+				};
 
-              contenu_1.style.visibility = 'visible';
-              contenu_2.style.visibility = 'hidden';
-
-      };
-
-    </script>
+			</script>
 
 	
 	

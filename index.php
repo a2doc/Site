@@ -65,21 +65,27 @@
 					<ul class="container_12">
 						<li class="grid_3 push_8" id="presentation"><a href="index2.php?page=presentation" title="presentation">Présentation</a></li>
 
-					<li id="contain" class="grid_3 push_8" style="height:200px">
-                       <div id="contenu_1"   style="position:absolute;height:200px;width:220px;background-color:#009933;visibility:<?php echo $_GET['view1'] ?>">
-                       	<p id="communaute"> Communauté</p>
-                       	
-                       </div>
+						<li class="grid_3 push_8" id="contain">
+						
+							<?php
+								if (!isset($_GET['view1']) && !isset($_GET['view2'])){
+									$_GET['view1']='visible';
+									$_GET['view2']='hidden';
+								}
+							?>
+							
+							<div id="contenu_1" style="position:absolute;box-shadow: 1px 1px 10px 1px #7f7f7f; width:220px; background-color:#009933; visibility:<?php echo $_GET['view1'] ?>">
+								<p id="communautee"> Communauté</p>
+							</div>
                         
-                       <div id="contenu_2" style="position:absolute;height:200px;background-color:#555:visibility:<?php echo $_GET['view2'] ?>">
-                       
-                       <?php
-                     include('php/includes/identity.php');   
-                       ?>
-                       
-                       </div> 
-					</li>
-					
+							<div id="contenu_2" style="position:absolute;box-shadow: 1px 1px 10px 1px #7f7f7f; width:220px; visibility:<?php echo $_GET['view2'] ?>">
+						   
+							<?php
+								include('php/includes/identity.php');   
+							?>
+						   
+							</div> 
+						</li>
 					</ul>
 
 					<ul class="container_12">
@@ -91,31 +97,29 @@
 		</section>
 
 
-          <script>
+        <script>
  	    
-      var contain = document.getElementById('contain'),
-          contenu_1 = document.getElementById('contenu_1'),
-          login = document.getElementById('login-form'),          
-          contenu_2 = document.getElementById('contenu_2');
+			var contain = document.getElementById('contain'),
+			contenu_1 = document.getElementById('contenu_1'),
+			login = document.getElementById('login-form'),          
+			contenu_2 = document.getElementById('contenu_2');
           
 
-     contain.onmouseover = function(e) {
-        
-              contenu_1.style.visibility = 'hidden';
-              contenu_2.style.visibility = 'visible';
-              login.style.visibility = 'visible';
+			contain.onmouseover = function(e) {
+				contenu_1.style.visibility = 'hidden';
+				contenu_2.style.visibility = 'visible';
+				login.style.visibility = 'visible';
 
-      };
+			};
 
-      contain.onmouseout = function(e) {
+			contain.onmouseout = function(e) {
+				contenu_1.style.visibility = 'visible';
+				contenu_2.style.visibility = 'hidden';
+				login.style.visibility = 'hidden';
 
-              contenu_1.style.visibility = 'visible';
-              contenu_2.style.visibility = 'hidden';
-              login.style.visibility = 'hidden';
+			};
 
-      };
-
-    </script>
+		</script>
     	
  	</body>
 </html>

@@ -1,3 +1,6 @@
+
+/*	a priori, ce fichier ne sert à rien...	*/
+
 <?php
 session_start();
 	 $_SESSION['Acces_ad'] = 0;

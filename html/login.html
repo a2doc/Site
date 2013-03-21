@@ -5,14 +5,18 @@
 <div id="login-form" style="visibility:<?php echo $_GET['view2'] ?> ">
 
 	<h1>Connexion</h1>
-	<fieldset>
-	<form action="index.php?view1=hidden&view2=visible" method='post'>	
-		<input type="email" name="login" placeholder="abc@exemple.fr" required>
-		<input type="password" name="pass" placeholder="mot de passe" required>
-		<input type="submit" value="Login">
-	 
-	
-	</form>
-	</fieldset>
+		<fieldset>
+		
+			<form action="index.php?view1=hidden&view2=visible" method='post'>	
+				<input type="email" name="login" placeholder="abc@exemple.fr" required>
+				<input type="password" name="pass" placeholder="mot de passe" required>
+				<span>
+					<a href="index2.php?page=inscription">Devenir membre</a>	
+				</span>
+				<input type="submit" value="Login">
+			 
+			
+			</form>
+		</fieldset>
 	
 </div>

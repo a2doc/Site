@@ -6,8 +6,8 @@
 	margin: 0px;
 	width: 220px;
 	position:relative;
-	top:-4px;
-	height: 204px;
+/*	top:-4px;*/
+	height: 205px;
 }
 
 
@@ -75,4 +75,23 @@
 
 #login-form fieldset form input[type="submit"]:hover {
 	background-color: #198d98;
+}
+
+
+#login-form fieldset form span {
+
+	float: left;
+	margin-top: -1em;
+/*	margin-top: -15px;	*/	
+	margin-left: 2em;
+}
+
+#login-form fieldset form span a{
+	font-size: 0.75em;
+	color: #999999;
+	text-decoration: none;	
+}
+
+#login-form fieldset form span a:hover {
+	color: #1dabb8;
 }

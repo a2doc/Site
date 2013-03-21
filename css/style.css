@@ -9,11 +9,11 @@ body{
 	margin:0;
 	padding:0;
 	background: url(../img/background/spray2.jpg) no-repeat center fixed;
-/*	background-color :#FFFFFF; /*
-	-webkit-background-size: cover; /* pour Chrome et Safari */
-	-moz-background-size: cover; /* pour Firefox */
-	-o-background-size: cover; /* pour Opera */
-	background-size: cover; /* version standardisée */
+/*	background-color :#FFFFFF; */
+	-webkit-background-size: cover; 	/* pour Chrome et Safari */
+	-moz-background-size: cover; 		/* pour Firefox */
+	-o-background-size: cover; 			/* pour Opera */
+	background-size: cover; 			/* version standardisée */
 	
 }
 
@@ -28,9 +28,11 @@ body{
 nav li{
 	display: inline;
 	margin-top: 1.2em;
-	opacity: 1;
-	-webkit-box-shadow: 1px 1px 2px 2px #7f7f7f;
-box-shadow: 1px 1px 2px 2px #7f7f7f;
+	opacity: 0.9;
+	-webkit-box-shadow: 1px 1px 10px 1px #7f7f7f; 	/* pour Chrome et Safari */
+	-moz-box-shadow: 1px 1px 10px 1px #7f7f7f;		/* pour Firefox */
+	-o-box-shadow: 1px 1px 10px 1px #7f7f7f;		/* pour Opera */
+	box-shadow: 1px 1px 10px 1px #7f7f7f; 			/* version standardisée */
 /*	-webkit-border-radius: 20px;
 	border-radius: 20px;	*/
 	position: relative;
@@ -59,11 +61,7 @@ nav li:hover{
 
 
 
-
-
-
-
-nav li a, p#communaute{
+nav li a, p#communautee{
 	
 	display: block;
 	font-family: arial, sans-serif;
