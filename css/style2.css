@@ -9,7 +9,8 @@ body{
 	font-family:arial;
 	margin:0;
 	padding:0;
-	background: url(../img/background/comb5.jpg) no-repeat center fixed; 
+	/*background: url(../img/background/comb5.jpg) no-repeat center fixed; */
+	background-color :#CECECE ; 
 	-webkit-background-size: cover; /* pour Chrome et Safari */
 	-moz-background-size: cover; /* pour Firefox */
 	-o-background-size: cover; /* pour Opera */
@@ -27,19 +28,12 @@ section#main{
 
 
 
-section#containNews{
-		width: 450px ;
-		height : 420px;
-		display : table-cell ;
-	    vertical-align: middle;
-}
 
 section#News{
 	background-color:#FFFFFF;
 	padding : 25px;
 	position : relative;
-	width: 350px ;
-	margin : auto ;
+	margin-top : 1em ;
 	border-radius: 1em;
 	box-shadow: 0 5px 5px rgba(0,0,0, .4);
 	opacity: 0.75;
@@ -61,9 +55,8 @@ section#Forums_track{
 section#agenda{
 	background-color:#FFFFFF;
 	position : absolute;
-	top : 100px;
+	margin-top : 1em;
 	right : 0px ;
-	margin :20px;
 	padding : 20px;
 	width : 350px ;
 	height : auto ;
@@ -174,17 +167,18 @@ nav a{
 	display: block;
 	padding:  8px 20px;
 	
-	border-radius: 1.6em;	/*tour des liens*/
-		-webkit-border-radius: 1.6em;
-		-moz-border-radius: 1.6em;
-		
+/*	border-radius: 1.6em;	/*tour des liens*/
+/*		-webkit-border-radius: 0.6em;
+		-moz-border-radius: 0.6em;
+*/		
 	text-shadow: 0 1px 1px rgba(0,0,0, .3);
 }
 
 nav a:hover {
-	background: #d5d5d5;
-	color: #444;
-	box-shadow: 0 1px 3px rgba(0,0,0, .4);
+	background: #2F5AAB;
+	/*color: #CECECE;
+	box-shadow: 0 1px 3px rgba(0,0,0, .4);*/
+	border-bottom: 4px solid #3399FF ;
 }
 
 header{
@@ -193,9 +187,10 @@ header{
 	width: 900px ;
 	height: 100px ;	
 	
-	background: #999999; /* Old browsers */
-background: -moz-linear-gradient(left, rgba(255,255,255,0)  0%,  rgba(0,0,0,0.5) 30%, rgba(0,0,0,0.5) 70%, rgba(255,255,255,0) 100%); /* FF3.6+ */
-background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(255,255,255,0)), color-stop(30%,rgba(0,0,0,0.5)),color-stop(70%,rgba(0,0,0,0.5)), color-stop(100%,rgba(255,255,255,0))); /* Chrome,Safari4+ */
+	background: #2F5AAB; /* Old browsers */
+/*background: -moz-linear-gradient(left, rgba(63,53,255,0)  0%,  rgba(63,53,255,0.5) 30%, rgba(63,53,255,0.5) 70%, rgba(63,53,255,0) 100%); /* FF3.6+ */
+/*background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(63,53,255,0)), color-stop(30%,rgba(63,53,255,0.5)),color-stop(70%,rgba(63,53,255,0.5)), color-stop(100%,rgba(63,53,255,0))); /* Chrome,Safari4+ */
+
 /*background: -webkit-linear-gradient(left,  #999999 0%,#c9c9c9 0%,#000000 50%,#c9c9c9 100%,#e5e5e5 100%); /* Chrome10+,Safari5.1+ */
 /*background: -o-linear-gradient(left,  #999999 0%,#c9c9c9 0%,#000000 50%,#c9c9c9 100%,#e5e5e5 100%); /* Opera 11.10+ */
 /*background: -ms-linear-gradient(left,  #999999 0%,#c9c9c9 0%,#000000 50%,#c9c9c9 100%,#e5e5e5 100%); /* IE10+ */
