@@ -40,7 +40,7 @@
 #inscript-form fieldset form label{
 	text-align: right;
 	padding-top: 1em;
-
+	text-shadow: 1px 1px 10px #a0a0a0;
 }
 
 #inscript-form fieldset form input {
