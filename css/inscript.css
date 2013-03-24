@@ -1,0 +1,101 @@
+/************************************************/
+/*					CSS de A2DOC				*/
+/*				Formulaire inscription			*/
+/*					Maxime Eloy					*/
+/************************************************/
+#inscript-form{
+	background-color: #fff;
+	-webkit-border-radius: 5px;
+			border-radius: 5px;
+/*	margin: 0px;*/
+/*	width: 220px;*/
+	position:relative;
+/*	top:-4px;*/
+}
+
+
+#inscript-form h1 {
+	background-color: #282830;
+	-webkit-border-radius: 5px 5px 0px 0px;
+			    border-radius: 5px 5px 0px 0px;
+	color: #fff;
+	font-size: 14px;
+	padding: 20px; 
+	text-align: center;
+	text-transform: uppercase;
+}
+
+#inscript-form fieldset {
+	border: none;
+	padding: 20px;
+	position: relative;
+}
+
+/*cache tout ce qui dépasse*/
+#inscript-form fieldset form {
+	overflow: hidden;
+/*	width: 210px;*/
+}
+
+#inscript-form fieldset form label{
+	text-align: right;
+	padding-top: 1em;
+
+}
+
+#inscript-form fieldset form input {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 0.75em;
+	outline: none;
+}
+
+#inscript-form fieldset form input {
+	border: 1px solid #dcdcdc;
+	-webkit-border-radius: 3px ;
+			    border-radius: 3px ;
+	padding: 12px 10px;
+/*	width: 180px;*/
+	margin-left : 8px;
+}
+
+#inscript-form fieldset form input[type="submit"] {
+	background-color: #1dabb8;
+	border: none;
+	-webkit-border-radius: 3px;
+			    border-radius: 3px;
+	color: #fff;
+	cursor: pointer;
+	float: right;
+	font-weight: bold;
+	margin-top: 10px;
+/*	padding: 12px 15px;*/
+	margin-right : 1em;
+	width: auto;
+
+}
+
+#inscript-form fieldset form input[type="submit"]:hover {
+	background-color: #198d98;
+}
+
+#inscript-form fieldset form input[type="reset"] {
+	background-color: #b82a1d;
+	border: none;
+	-webkit-border-radius: 3px;
+			    border-radius: 3px;
+	color: #fff;
+	cursor: pointer;
+	float: right;
+	font-weight: bold;
+	margin-top: 10px;
+/*	padding: 12px 15px;*/
+	margin-right : 4px;
+	width: auto;
+
+}
+
+#inscript-form fieldset form input[type="reset"]:hover {
+	background-color: #a2251a;
+}
+
+
