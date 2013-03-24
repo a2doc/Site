@@ -119,7 +119,7 @@ $insert_true=0;
  {
    try
      {    
-$sql =  "INSERT INTO a2doc.adherents (idadherents, nom, prenom, mail,pass) VALUES (NULL, '$nom', '$prenom', '$email',sha1('$pass'))";
+$sql =  "INSERT INTO a2doc.adherents (idadherents, nom, prenom, mail, pass) VALUES (NULL, '$nom', '$prenom', '$email',sha1('$pass'))";
 $req = $bdd->prepare($sql); 
 $req->execute();
        header("location: ../../index2.php?page=communaute");

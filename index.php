@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -55,8 +53,8 @@
   		</noscript>
  
  	</head>
- 
-
+	
+	<?php setCookie("authorized",'no');?>
 	<body>
 	
 		<section class="container_12">

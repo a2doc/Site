@@ -5,7 +5,7 @@
 	
 
 	<?php
-	$page = isset($_GET['page']) ? $_GET['page'] : "accueil";
+	$page = isset($_GET['page']) ? $_GET['page'] : "presentation";
 
 	define ("REP", "php/includes/");
 
@@ -17,7 +17,7 @@
 	}
 
 		else {
-		$inclusion = REP . "communaute.inc.php";
+		$inclusion = REP . "presentation.inc.php";
 		}
 
 	include "$inclusion"; 

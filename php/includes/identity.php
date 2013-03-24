@@ -18,6 +18,7 @@ if(isset($_POST) && !empty($_POST['login']) && !empty($_POST['pass']))
     }
 		
     else {
+        setCookie("authorized",'yes');
 		header("location: index2.php?page=communaute");
     
 	}    
