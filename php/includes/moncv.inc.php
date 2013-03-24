@@ -2,31 +2,37 @@
      include("php/includes/header.php");
      ?>
  
-<section  class="page">
 
-<h1>Compétences</h1>
+ 
+<section class='grid_12'>
 
+<h1 class='section_CV'>Mes compétences</h1>
+	
+<a href="#" onclick="displayPopup('Texte à afficher !'); return false"; class="grid_1 push_5" id="myButton">Modifier</a>
 
-	<?php
+<SCRIPT language="javascript">
+var displayPopup = function(text) {
+	// Affiche la popup
+	var popup = document.createElement('div');
+	popup.id = 'popup';
+	var content = document.createTextNode(text);
+	popup.appendChild(content);
+	var body = document.getElementsByTagName('body');
+	body[0].appendChild(popup);
+		
+	// Quitte la popup lorsqu'on clique dessus
+	popup.onclick = function() {
+			body[0].removeChild(popup);
+		}
+}
+</SCRIPT>
+
+</section>
+
+<section class='grid_12'>
+
+<h1 class='section_CV'>Ma formation</h1>
 	
-	
- include 'connectTobase.php'; 
-	
-	$q = $bdd->query("SELECT * FROM News ORDER BY date DESC");	
-	$i=0;
-          while (($champ_result = $q->fetch()) && ($i<3)) 
-          {
-          	$i=$i+1;
-			if ($i==1)
-			{
-			echo '<p class=\'dalle_title\'>';
-		    }
-          $date=$champ_result['2'];
-		  $news=$champ_result['1'];
-		  echo '<strong>'.$date.'</strong> : '.$news.'<br/>';
-	      }	 
-	
-	echo'</p>'
-	?>
-	
+<a href="#"  class="grid_1 push_5" id="myButton" onclick="alert('ATTENTION')" >Modifier</a>
+
 </section>
