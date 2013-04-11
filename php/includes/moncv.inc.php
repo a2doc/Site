@@ -15,8 +15,11 @@ var displayPopup = function(text) {
 	// Affiche la popup
 	var popup = document.createElement('div');
 	popup.id = 'popup';
-	var content = document.createTextNode(text);
-	popup.appendChild(content);
+	popup.style.width ='400px';
+	popup.style.height ='200px';
+	//var content = document.createTextNode(text);
+	popup.innerHTML = "<h1 style=color:black; >Salutations !</h1>";
+	//popup.appendChild(content);
 	var body = document.getElementsByTagName('body');
 	body[0].appendChild(popup);
 		
