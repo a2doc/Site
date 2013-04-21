@@ -50,8 +50,8 @@
 					{
 					echo '<p class=\'dalle_title\'>';
 		   			 }
-          		$date=$champ_result['2'];
-		  		$news=$champ_result['1'];
+          		$date=$champ_result['1'];
+		  		$news=$champ_result['2'];
 		  		echo '<strong>'.$date.'</strong> : '.$news.'<br/>';
 	      		}	 	
 			echo'</p>'
