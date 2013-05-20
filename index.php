@@ -66,7 +66,8 @@
 						<li class="grid_3 push_8" id="contain">
 						
 							<?php
-								if (!isset($_GET['view1']) && !isset($_GET['view2'])){
+								if (!isset($_GET['view1']) && !isset($_GET['view2']))
+								{
 									$_GET['view1']='visible';
 									$_GET['view2']='hidden';
 								}

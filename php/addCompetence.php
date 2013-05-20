@@ -55,6 +55,15 @@
 		$update=0;	
 		}
 		
+	
+		
+		if( isset($_POST['delete']))
+		{
+			$delete=$_POST['delete'];
+			$update=0;
+			$del_comp=$_POST['compTOdel'];
+		}
+		
 		
 		if (isset($_POST['niveau_up']))
 		{
@@ -113,8 +122,37 @@
 		else {
 		//	echo 'Vous avez déjà cette compétence </br>';
 		}
-
 		
+		// DELETE COMPETENCE HAS ADHERENT ET SUPPRIME LA COMPETENCE SI SEUL ADHERENT A L'AVOIR
+		if ($delete ==1)
+		{
+			$id_comp = Select_filter_id('Competences','competences',$del_comp);
+			$sql =  "DELETE FROM a2doc.adherents_has_competences
+			 WHERE competences_idCompetences='$id_comp' AND adherents_idadherents=
+					'$id_ad'" ;
+			$req = $bdd->prepare($sql);
+			$req->execute();
+			
+			// CHERCHE LES ID COMPETENCE ASSOCIER A UN ADHERENT
+			$req = $bdd->query("SELECT competences_idCompetences FROM adherents_has_competences");
+			
+			$erase_comp=1;
+			while ($associated = $req->fetch())
+			{
+				if ($associated['0']==$id_comp)
+				{
+					$erase_comp=0;
+				}			
+			}			
+			if ($erase_comp == 1)
+			{
+				$sql =  "DELETE FROM a2doc.competences
+				WHERE idCompetences='$id_comp'" ;
+				$req = $bdd->prepare($sql);
+				$req->execute();
+			}			
+		}
+	
 			//ECRIRE LES COMPETENCES DE L'ADHERENT
 			$req = $bdd->query("SELECT competences_idCompetences FROM adherents_has_competences
 							 WHERE adherents_idadherents='$id_ad'");		
@@ -122,9 +160,7 @@
 							 WHERE adherents_idadherents='$id_ad'");
 			$nb=0	;							 							 	
         		while ($my_competences = $req->fetch()) 
-      		  	{
-      		  	
-      		  		
+      		  	{     		  		
         		$my_niv = $req2->fetch();	
         		$niv = 	$my_niv['0'];
         		$comp = $my_competences['0'];	
@@ -142,7 +178,17 @@
 				 <div class="grid_2 myButton" > '.$name_comp['0'].' </div>  '.
 				 '<div class="grid_2 myButton" > '.$name_niv['0'] .' </div>
 				 <a class="grid_1 push_2 myButton"  href="#" onclick="show('.$nb.'); return false"; 
-				 >Modifier</a> </div> ' ;
+				 >Modifier</a> 
+			     <div class="contenu_2 grid_8" style=visibility:visible;position:absolute> 
+				 <form  id ="delete_form"  action="addCompetence.php" method="post"  >	
+						<div class="grid_2">
+						<input type="submit" class="styled-select_del" name="efface" value="Effacer">
+						<input type="hidden"  name="delete" value="1">';					
+				echo '<input type="hidden"  name="compTOdel" value="'.$name_comp['0'].'">							
+						</div>
+				</form>
+				</div>
+			    </div>';
 
  				//Modifier le NIVEAU des compétences				
 				echo '<div class="contenu_2 grid_8" style=visibility:hidden;position:absolute> 
@@ -164,6 +210,7 @@
 	      	    					  }
 	    	 						 echo 	'</select> </div>';			
        							 echo '<input class="grid_1 push_2"  type="submit" value="Enregistrer" >';
+       							 
 							echo '</form> </div>';
 				echo '</div>';
 
@@ -179,8 +226,8 @@
 
 <form  class='grid_12' style="position:relative;width:2000px;height:45px;display:inline;visibility:visible" action="addCompetence.php" method="post"  >
 	<div class="grid_8" id ='insert_base' style='visibility:visible;position:relative'> 
-	<div id="champ_competence" class="grid_2 styled-select">
-		<select id="competence_select" name="competence" onchange="changer()">
+	<div id="champ_competence" class="grid_2">
+		<select class="styled-select" id="competence_select" name="competence" onchange="changer()">
 			<?php
 			$i=1;
 			while  ($i < $entry_nb+1)
@@ -192,8 +239,8 @@
 			<option value="autre">Autres</option>
 		</select>
 	</div>
- <div id="champNiveau" class="grid_2 styled-select">
-		<select id="niveau"  name="niveau" >
+ <div id="champNiveau" class="grid_2 ">
+		<select  class="styled-select"  id="niveau"  name="niveau" >
 			<?php
 			Get_colonnes_value('Niveau');
 			$i=1;
@@ -205,7 +252,7 @@
 	      	  ?>			 		 
 		</select>
 	</div>			
-        <input type="submit"  class="grid_1 push_2" value='Ajouter' >
+        <input type="submit"  class="grid_1 push_2 styled-select" value='Ajouter' >
        </div> 
 </form>
 
@@ -221,7 +268,7 @@
 function changer() {
   if (document.getElementById('competence_select').value == "autre" )
    {
-    document.getElementById('champ_competence').innerHTML = '<input type="text" name="selection" autofocus>';
+    document.getElementById('champ_competence').innerHTML = '<input class="styled-select" type="text" name="selection" autofocus>';
   } 
 }
           
